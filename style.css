@@ -65,6 +65,29 @@ html {
     background-color: grey;
 }
 
+.start-button-container {
+    height: auto;
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.start-button {
+    height: 50px;
+    width: 200px;
+    color: #FEF2BF;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: #011F3F;
+    margin: 10px 10px;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+}
+.start-button:hover {
+    background-color: #003772;
+}
+
 @media (max-width: 600px) {
     .btn {
         height: 175px;

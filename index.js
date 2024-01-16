@@ -47,12 +47,19 @@ $(document).on('keydown', function () {
     }
 })
 
-$(document).on('ontouchstart', function () {
+// Mobile button to start the game..
+$('.start-button').on('ontouchstart', function () {
+    $('.start-button').addClass('pressed')
+    setTimeout(function () {
+        $('.start-button').removeClass('pressed')
+    }, 100)
+
     if(!gameStarted) {
         nextSequence()
         gameStarted = true
     }
 })
+// Mobile button to start the game..
 
 let answerCheck = (currentLevel) => {
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
