@@ -8,12 +8,12 @@ let nextSequence = () => {
     userClickedPattern = [];
     level++
     $('h1').text('Level ' + level)
-    let randomNumber = Math.floor(Math.random()*4)
+    let randomNumber = Math.floor(Math.random() * 4)
     let randomChosenColor = buttonColors[randomNumber]
     gamePattern.push(randomChosenColor)
 
     $('#' + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100)
-    
+
     playSound(randomChosenColor)
     animateButton(randomChosenColor)
 }
@@ -40,18 +40,24 @@ let animateButton = (currentColor) => {
 }
 
 $(document).on('keydown', function () {
-    nextSequence()
+    if(!gameStarted) {
+        nextSequence()
+        gameStarted = true
+    }
 })
 
 let answerCheck = (currentLevel) => {
-    if(!gameStarted) {
-        if(gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+        if (gamePattern.length === userClickedPattern.length) {
             setTimeout(function () {
                 nextSequence()
             }, 1000)
+            console.log('true')
         }
-        console.log('true')
-    } else {
+
+    } else  {
         console.log('false')
     }
+        
 }
+    
