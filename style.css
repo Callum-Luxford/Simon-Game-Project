@@ -84,6 +84,7 @@ html {
     border-radius: 5px;
     font-family: 'Press Start 2P', cursive;
 }
+
 .start-button:hover {
     background-color: #003772;
 }
@@ -99,7 +100,7 @@ html {
     }
 }
 
-@media  screen and (max-width: 450px) {
+@media screen and (max-width: 450px) {
     .btn {
         height: 125px;
         width: 125px;
@@ -108,16 +109,14 @@ html {
 
     .container {
         flex-wrap: nowrap;
-        
+
     }
 
     #title-level {
         font-size: 2rem;
     }
-    
-    .row {
-       
-    }
+
+    .row {}
 
     .start-button-container {
         margin-top: 30px;
