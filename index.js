@@ -24,7 +24,8 @@ $('.btn').on('click', function () {
     console.log(userClickedPattern)
     playSound(userChosenColor)
     animateButton(userChosenColor)
-    answerCheck(userClickedPattern)
+    // Call answerCheck() after a user has clicked and chosen their answer, passing in the index of the last answer in the user's sequence.
+    answerCheck(userClickedPattern.length -1) 
 })
 
 let playSound = (name) => {
@@ -57,7 +58,12 @@ let answerCheck = (currentLevel) => {
 
     } else  {
         console.log('false')
-    }
-        
+        playSound('wrong')
+        $('body').addClass('game-over')
+        setTimeout(function () {
+            $('body').removeClass('game-over')
+        }, 200)
+        $('h1').text('Game Over, Press Any Key to Restart')
+    }     
 }
     
