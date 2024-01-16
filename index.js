@@ -47,6 +47,13 @@ $(document).on('keydown', function () {
     }
 })
 
+$(document).on('ontouchstart', function () {
+    if(!gameStarted) {
+        nextSequence()
+        gameStarted = true
+    }
+})
+
 let answerCheck = (currentLevel) => {
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
         if (gamePattern.length === userClickedPattern.length) {
