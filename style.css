@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: #011F3F;
+}
+
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#title-level {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    margin: 10% 0%;
+    color: #FEF2BF;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+    /* flex-wrap: wrap; */
+}
+
+.btn {
+    height: 250px;
+    width: 250px;
+    border: 10px solid black;
+    border-radius: 20%;
+    cursor: pointer;
+    margin: 25px;
+}
+
+.game-over {
+    background-color: red;
+    opacity: 0.8;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.pressed {
+    box-shadow: 0 0 20px white;
+    background-color: grey;
+}
+
+@media (max-width: 600px) {
+    .btn {
+        height: 175px;
+        width: 175px;
+    }
+
+    .container {
+        flex-wrap: nowrap;
+    }
+}
+
+@media  screen and (max-width: 450px) {
+    .btn {
+        height: 125px;
+        width: 125px;
+        margin: 15px;
+    }
+
+    .container {
+        flex-wrap: nowrap;
+        
+    }
+
+    #title-level {
+        font-size: 2rem;
+    }
+    
+    .row {
+       
+    }
+}
