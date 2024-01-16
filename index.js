@@ -49,10 +49,10 @@ $(document).on('keydown', function () {
 
 // Mobile button to start the game..
 $('.start-button').on('click', function () {
-    // $('.start-button').addClass('pressed')
-    // setTimeout(function () {
-    //     $('.start-button').removeClass('pressed')
-    // }, 100)
+    $('.start-button').addClass('pressed')
+    setTimeout(function () {
+        $('.start-button').removeClass('pressed')
+    }, 100)
 
     if(!gameStarted) {
         nextSequence()
