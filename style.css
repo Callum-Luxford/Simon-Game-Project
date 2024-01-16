@@ -118,4 +118,8 @@ html {
     .row {
        
     }
+
+    .start-button-container {
+        margin-top: 50px;
+    }
 }
