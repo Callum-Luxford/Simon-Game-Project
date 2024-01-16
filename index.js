@@ -2,8 +2,10 @@ let buttonColors = ['red', 'blue', 'green', 'yellow'];
 let gamePattern = [];
 let userClickedPattern = [];
 let level = 0;
+let gameStarted = false;
 
 let nextSequence = () => {
+    userClickedPattern = [];
     level++
     $('h1').text('Level ' + level)
     let randomNumber = Math.floor(Math.random()*4)
@@ -22,6 +24,7 @@ $('.btn').on('click', function () {
     console.log(userClickedPattern)
     playSound(userChosenColor)
     animateButton(userChosenColor)
+    answerCheck(userClickedPattern)
 })
 
 let playSound = (name) => {
@@ -39,3 +42,16 @@ let animateButton = (currentColor) => {
 $(document).on('keydown', function () {
     nextSequence()
 })
+
+let answerCheck = (currentLevel) => {
+    if(!gameStarted) {
+        if(gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+            setTimeout(function () {
+                nextSequence()
+            }, 1000)
+        }
+        console.log('true')
+    } else {
+        console.log('false')
+    }
+}
