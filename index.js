@@ -4,6 +4,7 @@ let userClickedPattern = [];
 let level = 0;
 
 let nextSequence = () => {
+    level++
     $('h1').text('Level ' + level)
     let randomNumber = Math.floor(Math.random()*4)
     let randomChosenColor = buttonColors[randomNumber]
